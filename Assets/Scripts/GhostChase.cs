@@ -22,7 +22,7 @@ public class GhostChase : GhostBehavior
                 Vector3 newPosition = transform.position + new Vector3(availableDirections.x, availableDirections.y, 0.0f);
                 float distance = (ghost.target.position - newPosition).sqrMagnitude;
 
-                if(distance < minDistance){
+                if (distance < minDistance) {
                     direction = availableDirections;
                     minDistance = distance;
                 }

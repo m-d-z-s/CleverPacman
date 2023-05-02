@@ -5,19 +5,19 @@ using UnityEngine;
 [RequireComponent(typeof(Movement))]
 public class Pacman : MonoBehaviour
 {
-    public AnimatedSprite deathSequence;
-    public SpriteRenderer spriteRenderer { get; private set; }
-    public new Collider2D collider { get; private set; }
-    public Movement movement { get; private set; }
+    public AnimatedSprite deathSequence; //keep
+    public SpriteRenderer spriteRenderer { get; private set; } //keep
+    public new Collider2D collider { get; private set; } //keep maybe
+    public Movement movement { get; private set; } //keep
 
-    private void Awake()
+    private void Awake()//keep
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider = GetComponent<Collider2D>();
         movement = GetComponent<Movement>();
     }
 
-    private void Update()
+    private void Update() //change
     {
         // Set the new direction based on the current input
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) {
@@ -38,7 +38,7 @@ public class Pacman : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
     }
 
-    public void ResetState()
+    public void ResetState() //keep
     {
         gameObject.SetActive(true);
         movement.ResetState();
@@ -52,7 +52,7 @@ public class Pacman : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-    public void DeathSequence()
+    public void DeathSequence() //keep
     {
         enabled = false;
         spriteRenderer.enabled = false;

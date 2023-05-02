@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Movement : MonoBehaviour
@@ -7,7 +8,6 @@ public class Movement : MonoBehaviour
     public float speedMultiplier = 1f;
     public Vector2 initialDirection;
     public LayerMask obstacleLayer;
-
     public new Rigidbody2D rigidbody { get; private set; }
     public Vector2 direction { get; private set; }
     public Vector2 nextDirection { get; private set; }
@@ -67,11 +67,22 @@ public class Movement : MonoBehaviour
         }
     }
 
+    // public bool Occupied(Vector2 direction)
+    // {
+    //     // If no collider is hit then there is no obstacle in that direction
+    //     RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * 0.75f, 0f, direction, 1.5f, obstacleLayer);
+    //     return hit.collider != null;
+    // }
+
     public bool Occupied(Vector2 direction)
     {
         // If no collider is hit then there is no obstacle in that direction
         RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * 0.75f, 0f, direction, 1.5f, obstacleLayer);
-        return hit.collider != null;
+        return hit.collider != null && direction != -this.direction;
     }
 
+    public bool CanMoveInDirection(Vector2 direction)
+    {
+        return !Occupied(direction);
+    }
 }

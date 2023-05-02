@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6430238342269015879}
   m_Layer: 8
   m_Name: PowerPellet
-  m_TagString: Untagged
+  m_TagString: PowerPellet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,3 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9adb2bc75c742514eade00557f3e9660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  points: 10
+  duration: 8

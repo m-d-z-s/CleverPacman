@@ -1726,7 +1726,7 @@ MonoBehaviour:
   - {fileID: 1207095215}
   - {fileID: 11768576}
   - {fileID: 1173388194}
-  pacman: {fileID: 2046964762}
+  pacman: {fileID: 2046964767}
   pellets: {fileID: 1620068518}
   gameOverText: {fileID: 930305607}
   scoreText: {fileID: 1734597274}
@@ -1951,7 +1951,7 @@ GameObject:
   - component: {fileID: 1620068519}
   m_Layer: 8
   m_Name: Pellets
-  m_TagString: Untagged
+  m_TagString: Pellet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11019,6 +11019,7 @@ GameObject:
   - component: {fileID: 2046964760}
   - component: {fileID: 2046964759}
   - component: {fileID: 2046964763}
+  - component: {fileID: 2046964767}
   - component: {fileID: 2046964762}
   - component: {fileID: 2046964764}
   - component: {fileID: 2046964765}
@@ -11125,7 +11126,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046964758}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7a21bc92877abc4bbd9f950e2613023, type: 3}
   m_Name: 
@@ -11197,8 +11198,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialBehavior: {fileID: 0}
-  target: {fileID: 0}
+  target: {fileID: 2046964761}
   points: 200
+--- !u!114 &2046964767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046964758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54760f609d5ccf048a54005655d2926b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0.5
+  deathSequence: {fileID: 1723645464}
 --- !u!1001 &2028603257311250832
 PrefabInstance:
   m_ObjectHideFlags: 0

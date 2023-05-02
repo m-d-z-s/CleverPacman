@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6776316485938564143}
   m_Layer: 8
   m_Name: Pellet
-  m_TagString: Untagged
+  m_TagString: Pellet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a2abb630da471447a2627e6d16dbceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  points: 10
 --- !u!114 &-6776316485938564143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,3 +138,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a2abb630da471447a2627e6d16dbceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  points: 10
