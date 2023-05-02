@@ -5,8 +5,8 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public Ghost[] ghosts;
-    public Pacman pacman;
-    //public PacmanAI pacman;
+    //public Pacman pacman; // for non-ai pacman
+    public PacmanAI pacman;
     public Transform pellets;
     public int countOfPellet = 0;
 

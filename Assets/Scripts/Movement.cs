@@ -13,6 +13,15 @@ public class Movement : MonoBehaviour
     public Vector2 nextDirection { get; private set; }
     public Vector3 startingPosition { get; private set; }
 
+    public void ReverseDirection() 
+    {
+        // this.direction = -this.direction;
+        if (this.direction.x == 0 && this.direction.y == 1) this.direction = new Vector2(1, 0);
+        else if (this.direction.x == 1 && this.direction.y == 0) this.direction = new Vector2(0, -1);
+        else if (this.direction.x == 0 && this.direction.y == -1) this.direction = new Vector2(-1, 0);
+        else this.direction = new Vector2(0,1);
+    }
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
