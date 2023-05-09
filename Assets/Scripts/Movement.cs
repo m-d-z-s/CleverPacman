@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     public Vector2 nextDirection { get; private set; }
     public Vector3 startingPosition { get; private set; }
 
-    public void ReverseDirection() 
+    public void RotateDirection() 
     {
         // this.direction = -this.direction;
         if (this.direction.x == 0 && this.direction.y == 1) this.direction = new Vector2(1, 0);
@@ -76,12 +76,6 @@ public class Movement : MonoBehaviour
         }
     }
 
-    // public bool Occupied(Vector2 direction)
-    // {
-    //     // If no collider is hit then there is no obstacle in that direction
-    //     RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * 0.75f, 0f, direction, 1.5f, obstacleLayer);
-    //     return hit.collider != null;
-    // }
 
     public bool Occupied(Vector2 direction)
     {

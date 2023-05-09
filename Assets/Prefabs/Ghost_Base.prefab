@@ -97,6 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fdadcb59a3acf41a36b84b182f9f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
 --- !u!1 &4197400893142151049
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,6 +216,7 @@ GameObject:
   - component: {fileID: 5098769582752103091}
   - component: {fileID: 5098769582752103090}
   - component: {fileID: 5098769582752103093}
+  - component: {fileID: -4715492877972088230}
   - component: {fileID: -5757575323152653779}
   - component: {fileID: 2375989687447970370}
   - component: {fileID: 323984796923490737}
@@ -313,6 +318,22 @@ MonoBehaviour:
   initialBehavior: {fileID: 0}
   target: {fileID: 0}
   points: 200
+--- !u!114 &-4715492877972088230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098769582752103092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81fdadcb59a3acf41a36b84b182f9f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  up: {fileID: 21300000, guid: 7391304e6dcdc594484288107bfd217f, type: 3}
+  down: {fileID: 21300000, guid: b97167c35748db84fb4d32f4f242922a, type: 3}
+  left: {fileID: 21300000, guid: d65aa956b7569874fab274083826a77f, type: 3}
+  right: {fileID: 21300000, guid: 07ddb51374d9f19458dad756bbbcd880, type: 3}
 --- !u!114 &-5757575323152653779
 MonoBehaviour:
   m_ObjectHideFlags: 0

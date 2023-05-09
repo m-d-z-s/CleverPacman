@@ -1,18 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+// using UnityEngine;
 
-public class PacmanIsEating : PacmanAIBehavior
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+// public class PacmanIsEating : PacmanAIBehavior
+// {
+//     private void OnDisable()
+//     {
+//         pacman.eating.Enable();
+//     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
+//     private void OnTriggerEnter2D(Collider2D other)
+//     {
+//         Node node = other.GetComponent<Node>();
+
+//         // Do nothing while the ghost is frightened
+//         if (node != null && enabled && !ghost.frightened.enabled && node.availableDirections.Count > 0)
+//         {
+//             Vector2 direction = Vector2.zero;
+//             float minDistance = float.MaxValue;
+
+//             foreach (Vector2 availableDirections in node.availableDirections)
+//             {
+//                 Vector3 newPosition = transform.position + new Vector3(availableDirections.x, availableDirections.y, 0.0f);
+//                 float distance = (ghost.target.position - newPosition).sqrMagnitude;
+
+//                 if (distance < minDistance) {
+//                     direction = availableDirections;
+//                     minDistance = distance;
+//                 }
+//             }
+//             ghost.movement.SetDirection(direction);
+//         }
+//     }
+// }

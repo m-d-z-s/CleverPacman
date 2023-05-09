@@ -16,5 +16,4 @@ public class Pellet : MonoBehaviour
             Eat();
         }
     }
-
 }

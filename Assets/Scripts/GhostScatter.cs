@@ -24,7 +24,7 @@ public class GhostScatter : GhostBehavior
                 index++;
                 //index %= node.availableDirections.Count;
                 // Wrap the index back around if overflowed
-                if (index >= node.availableDirections.Count) {
+                if (index >= node.availableDirections.Count) {  
                     index = 0;
                 }
             }

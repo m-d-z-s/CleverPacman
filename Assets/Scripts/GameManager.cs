@@ -5,18 +5,19 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public Ghost[] ghosts;
-    //public Pacman pacman; // for non-ai pacman
+    // public Pacman pacman; // for non-ai pacman
     public PacmanAI pacman;
     public Transform pellets;
-    public int countOfPellet = 0;
+    //public int countOfPellet = 0;
 
-    public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI livesText;
+    public TextMeshProUGUI endOfTheGame;
+
 
     public int ghostMultiplier { get; private set; } = 1;
-    public int score { get; private set; }
-    public int lives { get; private set; }
+    public int score { get; private set; } = 0;
+    public int lives { get; private set; } = 3;
 
     private void Start()
     {
@@ -39,10 +40,10 @@ public class GameManager : MonoBehaviour
 
     private void NewRound()
     {
-         gameOverText.enabled = false;
+        endOfTheGame.enabled = false;
         foreach (Transform pellet in pellets) {
             pellet.gameObject.SetActive(true);
-            countOfPellet++;
+            //countOfPellet++;
         }
         ResetState();
     }
@@ -55,11 +56,25 @@ public class GameManager : MonoBehaviour
         pacman.ResetState();
     }
 
-    private void GameOver()
+    private void GameOver(int lives, int score)
     {
-        gameOverText.enabled = true;
-        for (int i = 0; i < ghosts.Length; i++) ghosts[i].gameObject.SetActive(false);
-        pacman.gameObject.SetActive(false);
+
+        if (lives == 0){
+            for (int i = 0; i < ghosts.Length; i++) ghosts[i].gameObject.SetActive(false);
+            pacman.gameObject.SetActive(false);
+
+            endOfTheGame.enabled = true;
+            endOfTheGame.text = "Game Over";
+
+        }
+        else{
+            for (int i = 0; i < ghosts.Length; i++) ghosts[i].gameObject.SetActive(false);
+            pacman.gameObject.SetActive(false);
+
+            endOfTheGame.enabled = true;
+            endOfTheGame.text = "Pacman wins!\n His score: " + score.ToString();
+        }
+
     }
 
     private void SetLives(int lives)
@@ -81,8 +96,8 @@ public class GameManager : MonoBehaviour
 		pacman.gameObject.SetActive(false);
         pacman.DeathSequence();
         SetLives(lives - 1);
-        if (lives > 0) Invoke(nameof(ResetState), 3.0f);
-        else GameOver();
+        if ((lives > 0) && HasRemainingPellets()) Invoke(nameof(ResetState), 3.0f);
+        else GameOver(lives, score);
     }
 
     public void GhostEaten(Ghost ghost)
@@ -95,14 +110,14 @@ public class GameManager : MonoBehaviour
     public void PelletEaten(Pellet pellet)
     {
         pellet.gameObject.SetActive(false);
-        countOfPellet--;
+        //countOfPellet--;
 
         SetScore(score + pellet.points);
 
         if (!HasRemainingPellets())
         {
-            pacman.gameObject.SetActive(false);
-            Invoke(nameof(NewRound), 3f);
+            GameOver(lives, score);
+           // Invoke(nameof(NewRound), 3f);
         }
     }
 
@@ -114,7 +129,6 @@ public class GameManager : MonoBehaviour
         }
         
         PelletEaten(pellet); // add points for eating the power pellet
-        countOfPellet--;
         CancelInvoke();
         // CancelInvoke(nameof(ResetGhostMultiplier)); // cancel any previous calls to ResetGhostMultiplier
         Invoke(nameof(ResetGhostMultiplier), pellet.duration); // reset the ghost multiplier after the power pellet duration
